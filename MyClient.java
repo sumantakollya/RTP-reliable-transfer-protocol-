@@ -1,6 +1,6 @@
 import java.net.*;
 import java.io.*;
-import java.util.*;
+import java.util.Arrays;
 
 public class MyClient {
 		
@@ -24,7 +24,7 @@ public class MyClient {
 		 
 		//server messages
 		String reply,ack;
-		String[] reply_split = new String[4];
+		String reply_seq_no,end_message,payload;
 		boolean end = false;
 		
 		//request from client
@@ -45,15 +45,15 @@ public class MyClient {
 			rd=new byte[1024];
 			rp=new DatagramPacket(rd,rd.length); 
 			socket.receive(rp);
-			reply=new String(rp.getData());
-			System.out.println(reply);
-			reply_split[1] = "1";
-			reply_split[2] = "payload";
-			reply_split[3] = "end";
+			reply = rp.toString();
+			//dividing the message into required parts
+			reply_seq_no = reply.substring(3,4);
+			payload = reply.substring(4,516);
+			end_message = reply.substring(516,519);
 			
-			if(Integer.parseInt(reply_split[1]) == seq_no){
+			if(Integer.parseInt(reply_seq_no) == seq_no){
 				System.out.println("recieved seq_no: "+seq_no);
-				data += reply_split[2];
+				data += payload;
 				seq_no+=1;
 				
 				//sending acknowledgement to server
@@ -63,7 +63,7 @@ public class MyClient {
 				socket.send(sp);
 				
 				//finding if this is the end seq_packet
-				if(reply_split[4].equals("end")){
+				if(end_message.equals("end")){
 				end = true;
 				}
 			}
