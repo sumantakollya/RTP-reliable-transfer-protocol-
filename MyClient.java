@@ -46,6 +46,8 @@ public class MyClient {
 			rp=new DatagramPacket(rd,rd.length); 
 			socket.receive(rp);
 			reply = rp.toString();
+			System.out.println(reply);
+			System.out.println(rd.toString());
 			//dividing the message into required parts
 			reply_seq_no = reply.substring(3,4);
 			payload = reply.substring(4,516);
