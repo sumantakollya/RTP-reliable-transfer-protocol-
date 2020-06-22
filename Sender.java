@@ -124,7 +124,7 @@ public class Sender{
 		/*
 		 * Medium loss simulator
 		 */
-		Random randomno = new Random();
+		Random randomno = 7;
 		int timeout = 2000;
 		// Generating random numbers for random loss and corruption depiction
 		int randLoss = randomno.nextInt(15);
@@ -224,7 +224,7 @@ public class Sender{
 		 * This method generates data to be sent to the 
 		 * network. It depicts the Application layer
 		 */
-		String[] data = {"hello","day","mango","apple","star","moon","banana","rose","RIT","Sanket","234"};
+		String[] data = {"hello","day","mango","apple","star","moon","banana","rose","RIT","Sumanta","234"};
 		
 		// Random number to select data randomly from the data list
 		Random randomno = new Random(); 
