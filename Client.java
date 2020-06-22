@@ -19,7 +19,7 @@ import java.util.Random;
  * The Reciever class handles all the functinalities in the Reciever side
  * of a RDT 3.0 protocol.
  *
- * @author Sanket Agarwal
+ * @author Sumanta Kollya
  */
 
 public class Reciever{
