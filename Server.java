@@ -22,7 +22,7 @@ import java.net.UnknownHostException;
  * The Sender class handles all the functinalities in the Sender side
  * of a RDT 3.0 protocol.
  *
- * @author Sanket Agarwal
+ * @author Sumanta Kollya
  */
 
 public class Sender{
