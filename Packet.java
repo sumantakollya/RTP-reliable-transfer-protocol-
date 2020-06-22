@@ -10,7 +10,7 @@ import java.io.Serializable;
  * This class makes the Packet and consists the attributes of 
  * a packet. This classs also provides the methods to retrieve these attributes.
  *
- * @author Sanket Agarwal
+ * @author Sumanta Kollya
  */
 
 public class Packet implements Serializable{
