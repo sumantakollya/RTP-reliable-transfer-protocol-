@@ -1,2 +1,2 @@
-# rtp
-implementing tcp using udp by adding various features.
+# RTP
+simulating a simple practical tcp connection using UDP.
